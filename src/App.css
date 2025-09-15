@@ -1,0 +1,64 @@
+@import "tailwindcss";
+body {
+    background-color: black;
+}
+
+@font-face {
+    font-family: 'Anton';
+    src: url('./assets/fonts/Anton-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('./assets/fonts/Inter-VariableFont_opsz\,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Anton', sans-serif;
+}
+
+p, span, a, li, div {
+    font-family: 'Inter', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.responsive-recaptcha {
+    transform-origin: 0 0;
+}
+
+@media (max-width: 768px) {
+    .responsive-recaptcha {
+        transform: scale(0.8);
+    }
+}
+@media (max-width: 480px) {
+    .responsive-recaptcha {
+        transform: scale(0.7);
+    }
+}
+@media (max-width: 320px) {
+    .responsive-recaptcha {
+        transform: scale(0.6);
+    }
+}
+@media (max-width: 280px) {
+    .responsive-recaptcha {
+        transform: scale(0.5);
+    }
+}
+
+@media (max-width: 320px) {
+    .object-cover {
+        /* Ajusta la escala para que el video no se corte en móviles */
+        transform: scale(0.9); /* Aumenta la escala para cubrir más área y evitar que se corte */
+    }
+}
