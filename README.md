@@ -29,10 +29,9 @@ This project was built using modern front-end technologies and deployment practi
 
 ---
 
-## 🔗 Live & Code
+## 🔗 Live
 
-- **Live Website:** [https://mntrvrecords.com](https://mntrvrecords.com)  
-- **GitHub Repository:** [https://github.com/William-Fernandez/MNTRVRecords](https://github.com/William-Fernandez/MNTRVRecords)  
+- **Live Website:** [https://mntrvrecords.com](https://mntrvrecords.com) 
 
 ---
 
