@@ -19,7 +19,7 @@ export const products = [
         artist: 'Zarek (COL)',
         description: 'Jiggle” by Zarek (COL) is an energetic track with rolling percussion, funky guitar, and a groovy bassline. Blending playfulness with irresistible rhythm, it’s perfect for clubs and festivals, made to move bodies and spark smiles on the dancefloor.',
         vinylUrl: '',
-        digitalUrl: '',
-        listenUrl: ''
+        digitalUrl: 'https://www.beatport.com/es/release/jiggle/5280531',
+        listenUrl: 'https://open.spotify.com/intl-es/track/2xsPkfq14w74AFi3ncBm44?si=5fbea759b9c54ddd'
     },
 ];

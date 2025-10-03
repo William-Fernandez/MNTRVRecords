@@ -7,6 +7,7 @@ import CarouselNavigation from "./CarouselNavigation.jsx";
 export default function FeaturedReleaseCarousel() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showModal, setShowModal] = useState(false);
+    const [selectedProduct, setSelectedProduct] = useState(null);
     const [direction, setDirection] = useState(1);
     const slideInterval = useRef(null);
     const [isHovering, setIsHovering] = useState(false);
@@ -25,11 +26,13 @@ export default function FeaturedReleaseCarousel() {
     };
 
     useEffect(() => {
-        if (!isHovering) {
+        if (!isHovering && !showModal) {
             startSlideShow();
+        } else {
+            stopSlideShow();
         }
         return () => stopSlideShow();
-    }, [isHovering]);
+    }, [isHovering, showModal]);
 
     const nextSlide = () => {
         setDirection(1);
@@ -45,8 +48,9 @@ export default function FeaturedReleaseCarousel() {
         );
     };
 
-    const handleBuyClick = () => {
+    const handleBuyClick = (product) => {
         stopSlideShow();
+        setSelectedProduct(product);
         setShowModal(true);
     };
 
@@ -74,7 +78,7 @@ export default function FeaturedReleaseCarousel() {
                 currentProduct={currentProduct}
                 direction={direction}
                 setIsHovering={setIsHovering}
-                onBuyClick={handleBuyClick}
+                onBuyClick={() => handleBuyClick(currentProduct)}
             />
 
             <CarouselNavigation
@@ -84,14 +88,16 @@ export default function FeaturedReleaseCarousel() {
                 currentIndex={currentIndex}
             />
 
-            <Modal
-                show={showModal}
-                onClose={() => setShowModal(false)}
-                title="Choose Format"
-                description={`Select how you want to purchase ${currentProduct.title}.`}
-                vinylUrl={currentProduct.vinylUrl}
-                digitalUrl={currentProduct.digitalUrl}
-            />
+            {selectedProduct && (
+                <Modal
+                    show={showModal}
+                    onClose={() => setShowModal(false)}
+                    title="Choose Format"
+                    description={`Select how you want to purchase ${selectedProduct.title}.`}
+                    vinylUrl={selectedProduct.vinylUrl}
+                    digitalUrl={selectedProduct.digitalUrl}
+                />
+            )}
         </section>
     );
 }

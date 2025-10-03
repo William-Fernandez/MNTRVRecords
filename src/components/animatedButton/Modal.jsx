@@ -14,6 +14,8 @@ export default function Modal({
         }
     };
 
+    const availableFormats = vinylUrl ? "Digital + Vinyl" : "Digital only";
+
     return (
         <AnimatePresence>
             {show && (
@@ -33,14 +35,22 @@ export default function Modal({
                         className="bg-white rounded-3xl p-6 w-96 shadow-2xl"
                     >
                         <h2 className="text-2xl font-bold mb-2">{title}</h2>
-                        <p className="text-gray-600 mb-6">{description}</p>
+                        <p className="text-gray-600 mb-4">{description}</p>
+                        <p className="text-sm text-gray-500 mb-6">
+                            Available formats: {availableFormats}
+                        </p>
+
                         <div className="flex flex-col gap-4">
-                            <button
-                                onClick={() => window.open(vinylUrl, "_blank")}
-                                className="px-5 py-3 bg-black text-white rounded-xl hover:bg-gray-800 cursor-pointer"
-                            >
-                                Buy Vinyl (Elastic Stage)
-                            </button>
+                            {vinylUrl && (
+                                <button
+                                    onClick={() =>
+                                        window.open(vinylUrl, "_blank")
+                                    }
+                                    className="px-5 py-3 bg-black text-white rounded-xl hover:bg-gray-800 cursor-pointer"
+                                >
+                                    Buy Vinyl (Elastic Stage)
+                                </button>
+                            )}
                             <button
                                 onClick={() =>
                                     window.open(digitalUrl, "_blank")
@@ -50,6 +60,7 @@ export default function Modal({
                                 Buy Digital (Beatport)
                             </button>
                         </div>
+
                         <button
                             onClick={onClose}
                             className="mt-6 text-sm text-gray-500 hover:text-black cursor-pointer"
