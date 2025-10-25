@@ -13,14 +13,14 @@ export default function ShopCard({
     const [showModal, setShowModal] = useState(false);
 
     return (
-        <div className="bg-white rounded-2xl shadow p-4 flex flex-col items-center w-60">
+        <div className="bg-white rounded-2xl shadow p-4 flex flex-col items-center w-72 min-h-[380px]">
             <img
                 src={image}
                 alt={title}
-                className="w-full h-48 object-cover rounded-xl mb-4"
+                className="w-full h-56 object-cover rounded-xl mb-4"
             />
             <h3 className="text-xl font-semibold">{title}</h3>
-            <p className="text-gray-500 mb-4">{artist}</p>
+            <p className="text-gray-500 mb-4 text-center">{artist}</p>
             <div className="flex gap-4">
                 <AnimatedButton onClick={() => setShowModal(true)}>
                     Buy

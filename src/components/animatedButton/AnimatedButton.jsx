@@ -31,8 +31,8 @@ export default function AnimatedButton({
 
     const baseStyle =
         type === "primary"
-            ? "px-7 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-xl cursor-pointer relative overflow-hidden transition-colors duration-200"
-            : "px-5 py-2 border border-black rounded-xl cursor-pointer relative overflow-hidden hover:bg-gray-100/10 transition-colors duration-200";
+            ? "px-8 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-xl cursor-pointer relative overflow-hidden transition-colors duration-200"
+            : "px-6 py-2 border border-black rounded-xl cursor-pointer relative overflow-hidden hover:bg-gray-100/10 transition-colors duration-200";
 
     return (
         <motion.button

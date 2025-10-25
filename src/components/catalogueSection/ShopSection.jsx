@@ -16,7 +16,7 @@ export default function ShopSection() {
                 transition={{ duration: 2, ease: "easeOut" }}
             >
                 <div className="w-full flex flex-col items-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-start mb-4 text-white mt-8 pl-2.5">
+                    <h2 className="text-3xl md:text-4xl font-bold text-start mb-4 text-white mt-16 pl-2.5">
                         Catalogue
                     </h2>
                     <p className="text-white mb-12 max-w-3xl pl-2.5 text-sm md:text-base text-center md:text-start">
